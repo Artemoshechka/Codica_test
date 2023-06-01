@@ -1,0 +1,31 @@
+<%= stylesheet_link_tag "devise/sign_in" %>
+
+<div class="form_container">
+  <h2>Sign in</h2>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field form-group">
+      <%= f.label :phone %><br />
+      <%= f.text_field :phone, autofocus: true, autocomplete: "phone", class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field form-group">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit "Sign In", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
+  <%= link_to "Forgot your password?", new_password_path(resource_name) %>
+
+</div>
+

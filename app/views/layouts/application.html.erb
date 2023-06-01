@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Polyclinic</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body>
+    <%= render 'layouts/navbar' %>
+    <%= render 'layouts/flash_notice' %>
+    <%= render 'layouts/flash_alert' %>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
+  </body>
+</html>
